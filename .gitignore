@@ -1,0 +1,4 @@
+.env
+.vscode
+catboost_info
+Train_Model

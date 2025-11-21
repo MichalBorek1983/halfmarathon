@@ -1,0 +1,972 @@
+2025-11-20 13:04:03,944:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-11-20 13:04:03,944:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-11-20 13:04:03,944:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-11-20 13:04:03,944:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-11-20 13:04:07,140:INFO:Initializing load_model()
+2025-11-20 13:04:07,140:INFO:load_model(model_name=final_regression_pipeline, platform=None, authentication=None, verbose=True)
+2025-11-20 13:04:07,245:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\_distutils_hack\__init__.py:30: UserWarning: Setuptools is replacing distutils. Support for replacing an already imported distutils is deprecated. In the future, this condition will fail. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+  warnings.warn(
+
+2025-11-20 13:04:07,265:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-20 13:04:07,407:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-20 13:04:07,429:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-20 13:04:07,432:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-20 13:04:07,463:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:437: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-20 13:04:08,012:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-20 13:04:08,142:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-20 13:04:08,167:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-20 13:04:08,169:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-20 13:04:08,197:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:437: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-20 13:04:09,055:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-20 13:04:09,206:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-20 13:04:09,227:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-20 13:04:09,229:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-20 13:04:09,251:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:437: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-20 13:04:12,665:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-20 13:04:12,791:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-20 13:04:12,808:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-20 13:04:12,810:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-20 13:04:12,832:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:437: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-20 13:04:18,458:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-20 13:04:18,572:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-20 13:04:18,589:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-20 13:04:18,592:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-20 13:04:18,614:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:437: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-20 13:04:26,449:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-20 13:04:26,555:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-20 13:04:26,571:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-20 13:04:26,575:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-20 13:04:26,599:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:437: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 08:49:57,827:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-11-21 08:49:57,835:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-11-21 08:49:57,835:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-11-21 08:49:57,835:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-11-21 08:50:02,702:INFO:Initializing load_model()
+2025-11-21 08:50:02,702:INFO:load_model(model_name=final_regression_pipeline, platform=None, authentication=None, verbose=True)
+2025-11-21 08:50:02,708:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\_distutils_hack\__init__.py:30: UserWarning: Setuptools is replacing distutils. Support for replacing an already imported distutils is deprecated. In the future, this condition will fail. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+  warnings.warn(
+
+2025-11-21 08:50:02,728:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 08:50:02,850:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 08:50:02,911:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 08:50:02,914:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 08:50:02,953:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:437: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 08:50:03,704:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 08:50:03,840:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 08:50:04,021:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 08:50:04,022:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 08:50:04,048:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:437: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 08:50:04,717:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 08:50:04,831:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 08:50:04,856:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 08:50:04,859:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 08:50:04,887:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:437: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 08:50:12,331:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 08:50:12,440:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 08:50:12,458:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 08:50:12,459:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 08:50:12,482:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:437: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 08:50:19,433:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 08:50:19,535:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 08:50:19,557:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 08:50:19,560:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 08:50:19,578:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:437: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 08:50:41,054:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 08:50:41,162:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 08:50:41,181:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 08:50:41,184:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 08:50:41,211:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:437: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:01:01,773:INFO:Initializing load_model()
+2025-11-21 09:01:01,773:INFO:load_model(model_name=final_regression_pipeline, platform=None, authentication=None, verbose=True)
+2025-11-21 09:01:01,798:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:01:01,919:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:01:01,942:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:01:01,944:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:01:01,969:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:487: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:01:02,492:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:01:02,660:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:01:02,856:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:01:03,016:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:01:03,018:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:01:03,042:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:487: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:01:03,661:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:01:03,777:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:01:04,017:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:01:04,122:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:01:04,155:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:01:04,157:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:01:04,187:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:487: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:02:27,419:INFO:Initializing load_model()
+2025-11-21 09:02:27,419:INFO:load_model(model_name=final_regression_pipeline, platform=None, authentication=None, verbose=True)
+2025-11-21 09:02:27,434:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:27,582:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:27,609:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:27,611:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:27,641:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:02:28,346:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:28,472:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:28,498:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:28,500:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:28,527:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:02:29,001:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:29,129:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:29,381:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:29,507:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:29,712:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:29,715:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:29,738:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:02:34,491:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:34,604:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:34,629:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:34,632:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:34,661:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:02:42,470:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:42,575:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:42,596:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:42,597:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:42,617:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:02:45,562:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:45,661:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:45,688:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:45,691:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:02:45,710:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:09:49,171:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:09:49,288:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:09:49,314:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:09:49,321:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:09:49,359:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:09:49,867:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:09:50,007:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:09:50,029:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:09:50,032:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:09:50,061:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:22:43,499:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:22:43,617:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:22:43,640:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:22:43,646:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:22:43,683:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:22:44,443:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:22:44,558:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:22:44,590:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:22:44,593:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:22:44,621:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:22:48,024:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:22:48,161:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:22:48,386:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:22:48,494:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:22:48,521:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:22:48,523:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:22:48,544:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:22:48,830:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:22:48,976:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:22:49,319:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:22:49,438:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:22:49,465:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:22:49,466:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:22:49,493:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:29:24,350:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-11-21 09:29:24,350:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-11-21 09:29:24,350:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-11-21 09:29:24,350:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-11-21 09:29:28,486:INFO:Initializing load_model()
+2025-11-21 09:29:28,486:INFO:load_model(model_name=final_regression_pipeline, platform=None, authentication=None, verbose=True)
+2025-11-21 09:29:28,490:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\_distutils_hack\__init__.py:30: UserWarning: Setuptools is replacing distutils. Support for replacing an already imported distutils is deprecated. In the future, this condition will fail. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+  warnings.warn(
+
+2025-11-21 09:29:28,504:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:29:28,619:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:29:28,646:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:29:28,647:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:29:28,691:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:29:31,889:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:29:31,991:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:29:32,007:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:29:32,010:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:29:32,025:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:29:32,857:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:29:32,980:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:29:33,001:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:29:33,004:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:29:33,026:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:29:37,558:INFO:Initializing predict_model()
+2025-11-21 09:29:37,560:INFO:predict_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x000001AB70EB5390>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['5 km Czas', 'Wiek',
+                                             'czas_5km_normalized',
+                                             'wiek_normalized', 'is_male',
+                                             'czas5km_x_wiek', 'czas5km_x_male',
+                                             'czas5km_x_female', 'wiek_x_male',
+                                             'czas5km_x_wiek_x_male',
+                                             'czas_5km_squared', 'wiek_squared',
+                                             'czas5km_sq_x_wiek',
+                                             'czas5km_x_wiek_sq'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=[],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('clean_column_names',
+                 TransformerWrapper(transformer=CleanColumnNames())),
+                ('actual_estimator', LinearRegression(n_jobs=-1))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x000001AB74CCD080>)
+2025-11-21 09:29:37,560:INFO:Checking exceptions
+2025-11-21 09:29:37,560:INFO:Preloading libraries
+2025-11-21 09:29:37,560:INFO:Set up data.
+2025-11-21 09:29:37,566:INFO:Set up index.
+2025-11-21 09:29:37,751:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:29:37,854:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:29:37,877:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:29:37,879:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:29:37,901:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:29:52,818:INFO:Initializing predict_model()
+2025-11-21 09:29:52,818:INFO:predict_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x000001AB73FAFDD0>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['5 km Czas', 'Wiek',
+                                             'czas_5km_normalized',
+                                             'wiek_normalized', 'is_male',
+                                             'czas5km_x_wiek', 'czas5km_x_male',
+                                             'czas5km_x_female', 'wiek_x_male',
+                                             'czas5km_x_wiek_x_male',
+                                             'czas_5km_squared', 'wiek_squared',
+                                             'czas5km_sq_x_wiek',
+                                             'czas5km_x_wiek_sq'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=[],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('clean_column_names',
+                 TransformerWrapper(transformer=CleanColumnNames())),
+                ('actual_estimator', LinearRegression(n_jobs=-1))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x000001AB74C39080>)
+2025-11-21 09:29:52,818:INFO:Checking exceptions
+2025-11-21 09:29:52,818:INFO:Preloading libraries
+2025-11-21 09:29:52,818:INFO:Set up data.
+2025-11-21 09:29:52,828:INFO:Set up index.
+2025-11-21 09:29:53,019:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:29:53,126:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:29:53,145:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:29:53,148:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:29:53,170:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:29:57,928:INFO:Initializing predict_model()
+2025-11-21 09:29:57,928:INFO:predict_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x000001AB73CD8750>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['5 km Czas', 'Wiek',
+                                             'czas_5km_normalized',
+                                             'wiek_normalized', 'is_male',
+                                             'czas5km_x_wiek', 'czas5km_x_male',
+                                             'czas5km_x_female', 'wiek_x_male',
+                                             'czas5km_x_wiek_x_male',
+                                             'czas_5km_squared', 'wiek_squared',
+                                             'czas5km_sq_x_wiek',
+                                             'czas5km_x_wiek_sq'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=[],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('clean_column_names',
+                 TransformerWrapper(transformer=CleanColumnNames())),
+                ('actual_estimator', LinearRegression(n_jobs=-1))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x000001AB7367BF60>)
+2025-11-21 09:29:57,928:INFO:Checking exceptions
+2025-11-21 09:29:57,928:INFO:Preloading libraries
+2025-11-21 09:29:57,928:INFO:Set up data.
+2025-11-21 09:29:57,934:INFO:Set up index.
+2025-11-21 09:29:58,114:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:29:58,221:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:29:58,238:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:29:58,241:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:29:58,267:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:30:03,655:INFO:Initializing predict_model()
+2025-11-21 09:30:03,655:INFO:predict_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x000001AB73D979D0>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['5 km Czas', 'Wiek',
+                                             'czas_5km_normalized',
+                                             'wiek_normalized', 'is_male',
+                                             'czas5km_x_wiek', 'czas5km_x_male',
+                                             'czas5km_x_female', 'wiek_x_male',
+                                             'czas5km_x_wiek_x_male',
+                                             'czas_5km_squared', 'wiek_squared',
+                                             'czas5km_sq_x_wiek',
+                                             'czas5km_x_wiek_sq'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=[],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('clean_column_names',
+                 TransformerWrapper(transformer=CleanColumnNames())),
+                ('actual_estimator', LinearRegression(n_jobs=-1))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x000001AB737693A0>)
+2025-11-21 09:30:03,655:INFO:Checking exceptions
+2025-11-21 09:30:03,655:INFO:Preloading libraries
+2025-11-21 09:30:03,656:INFO:Set up data.
+2025-11-21 09:30:03,658:INFO:Set up index.
+2025-11-21 09:30:03,837:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:30:03,946:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:30:03,963:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:30:03,966:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:30:03,982:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:32:35,201:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:35,336:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:35,572:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:35,705:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:35,725:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:35,728:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:35,756:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:32:52,264:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:52,383:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:52,410:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:52,410:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:52,432:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:32:52,869:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:52,997:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:53,019:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:53,022:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:53,047:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:32:54,538:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:54,657:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:54,681:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:54,684:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:54,705:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:32:55,207:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:55,358:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:55,377:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:55,382:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:55,407:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:32:57,847:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:57,985:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:58,205:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:58,353:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:58,379:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:58,381:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:32:58,401:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:33:04,884:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:33:05,003:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:33:22,875:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:33:23,002:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:33:23,115:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:658: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.boxplot(x='Kategoria wiekowa', y='Tempo_min_km', data=df_plot,
+
+2025-11-21 09:33:23,177:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:666: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.boxplot(x='Kategoria wiekowa', y='Czas_minuty', data=df_plot,
+
+2025-11-21 09:33:23,216:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:674: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.boxplot(x='P³eæ_Wykres', y='Tempo_min_km', data=df_plot,
+
+2025-11-21 09:33:47,211:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:33:47,371:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:40:53,228:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:40:53,339:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:40:53,360:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:40:53,364:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:40:53,392:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
+2025-11-21 09:40:53,865:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:40:53,975:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:40:54,227:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:40:54,332:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:40:54,358:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in ITableOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:40:54,359:WARNING:C:\Conda\envs\Zad_Mod9\Lib\site-packages\itables\typing.py:203: SyntaxWarning: These arguments are not documented in DTForITablesOptions: {'width'}. You can silence this warning by setting `itables.options.warn_on_undocumented_option=False`. If you believe ITableOptions should be updated, please make a PR or open an issue at https://github.com/mwouts/itables
+  warnings.warn(
+
+2025-11-21 09:40:54,381:WARNING:C:\Users\Michal\Desktop\Od_zera_do_AI\Modul_9\Zadanie_domowe lokalnie\app.py:408: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x='Brakuj¹ce wartoœci %', y='Kolumna', data=final_result_df, palette="viridis", ax=ax)
+
