@@ -27,281 +27,142 @@ import openai
 
 # --- KONFIGURACJA ŚRODOWISKA I ZASOBÓW ---
 load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
-
 BUCKET_NAME = "zadmod-9"
-MODEL_NAME = 'final_regression_pipeline'
-MODEL_KEY_S3 = 'Train_Model/final_regression_pipeline.pkl'
-STATS_KEY_S3 = 'Train_Model/normalization_stats.json'
+s3 = boto3.client("s3")
+st.set_page_config(layout="wide", page_title="Predykcja Półmaratonu")
 
-# Inicjalizacja S3
-try:
-    s3 = boto3.client("s3")
-except Exception as e:
-    st.error(f"Błąd S3: {e}")
-    s3 = None
-
-st.set_page_config(layout="wide", page_title="Predykcja i Analiza Półmaratonu")
-
-# --- FUNKCJE POMOCNICZE ---
-
+# --- FUNKCJE ---
 def convert_time_to_seconds(time_str):
-    """Konwertuje czas H:M:S lub M:S na sekundy."""
-    time_str = str(time_str).strip()
-    if pd.isnull(time_str) or time_str in ['DNS', 'DNF', 'None']:
-        return None
-    
-    match = re.match(r'(?:(\d+):)?(\d+):(\d+)', time_str)
+    match = re.match(r'(?:(\d+):)?(\d+):(\d+)', str(time_str).strip())
     if match:
         H, M, S = [int(g) if g else 0 for g in match.groups()]
         return H * 3600 + M * 60 + S
     return None
 
 def seconds_to_hms(seconds):
-    """Konwertuje sekundy na H:M:S."""
-    if seconds is None or seconds < 0: 
-        return "N/A"
-    seconds = int(round(seconds))
     h, m, s = seconds // 3600, (seconds % 3600) // 60, seconds % 60
     return f"{h:02}:{m:02}:{s:02}"
 
-def create_features(czas_5km_sec, wiek, plec, stats):
-    """
-    Tworzy wszystkie cechy potrzebne do predykcji ML.
-    
-    Args:
-        czas_5km_sec: czas 5km w sekundach
-        wiek: wiek biegacza
-        plec: 'Mężczyzna' lub 'Kobieta'
-        stats: słownik ze statystykami normalizacji
-    
-    Returns:
-        DataFrame z wszystkimi cechami interakcyjnymi
-    """
-    # Normalizacja
-    czas_5km_norm = (czas_5km_sec - stats['mean_5km']) / stats['std_5km']
-    wiek_norm = (wiek - stats['mean_wiek']) / stats['std_wiek']
+def create_features(czas_5km, wiek, plec, stats):
+    norm_czas = (czas_5km - stats['mean_5km']) / stats['std_5km']
+    norm_wiek = (wiek - stats['mean_wiek']) / stats['std_wiek']
     is_male = 1 if plec == 'Mężczyzna' else 0
     
-    # Cechy interakcyjne (czas × wiek × płeć)
-    features = {
-        '5 km Czas': czas_5km_sec,
-        'czas_5km_normalized': czas_5km_norm,
-        'Wiek': wiek,
-        'wiek_normalized': wiek_norm,
-        'is_male': is_male,
-        'czas5km_x_wiek': czas_5km_norm * wiek_norm,
-        'czas5km_x_male': czas_5km_norm * is_male,
-        'czas5km_x_female': czas_5km_norm * (1 - is_male),
-        'wiek_x_male': wiek_norm * is_male,
-        'czas5km_x_wiek_x_male': czas_5km_norm * wiek_norm * is_male,
-        'czas_5km_squared': czas_5km_norm ** 2,
-        'wiek_squared': wiek_norm ** 2,
-        'czas5km_sq_x_wiek': (czas_5km_norm ** 2) * wiek_norm,
-        'czas5km_x_wiek_sq': czas_5km_norm * (wiek_norm ** 2)
-    }
-    
-    return pd.DataFrame([features])
-
-# --- ŁADOWANIE ZASOBÓW ---
+    return pd.DataFrame([{
+        '5 km Czas': czas_5km, 'czas_5km_normalized': norm_czas,
+        'Wiek': wiek, 'wiek_normalized': norm_wiek, 'is_male': is_male,
+        'czas5km_x_wiek': norm_czas * norm_wiek,
+        'czas5km_x_male': norm_czas * is_male,
+        'czas5km_x_female': norm_czas * (1 - is_male),
+        'wiek_x_male': norm_wiek * is_male,
+        'czas5km_x_wiek_x_male': norm_czas * norm_wiek * is_male,
+        'czas_5km_squared': norm_czas ** 2,
+        'wiek_squared': norm_wiek ** 2,
+        'czas5km_sq_x_wiek': (norm_czas ** 2) * norm_wiek,
+        'czas5km_x_wiek_sq': norm_czas * (norm_wiek ** 2)
+    }])
 
 @st.cache_data
-def load_data_from_s3(file_key):
-    """Wczytuje dane z S3."""
-    if s3 is None:
-        return pd.DataFrame()
+def load_s3_data(key):
     try:
-        obj = s3.get_object(Bucket=BUCKET_NAME, Key=file_key)
+        obj = s3.get_object(Bucket=BUCKET_NAME, Key=key)
         return pd.read_csv(obj['Body'], sep=";")
-    except Exception as e:
-        st.error(f"Błąd ładowania {file_key}: {e}")
+    except:
         return pd.DataFrame()
 
 @st.cache_data
-def load_normalization_stats():
-    """Pobiera statystyki normalizacji z S3."""
-    if s3 is None:
-        return None
+def load_stats():
     try:
-        local_path = 'normalization_stats.json'
-        if not os.path.exists(local_path):
-            s3.download_file(BUCKET_NAME, STATS_KEY_S3, local_path)
-        
-        with open(local_path, 'r') as f:
-            return json.load(f)
-    except Exception as e:
-        st.error(f"Błąd ładowania statystyk: {e}")
+        if not os.path.exists('normalization_stats.json'):
+            s3.download_file(BUCKET_NAME, 'Train_Model/normalization_stats.json', 'normalization_stats.json')
+        return json.load(open('normalization_stats.json'))
+    except:
         return None
 
 @st.cache_resource
-def load_ml_model():
-    """Pobiera i ładuje model ML."""
-    if s3 is None:
-        return None
+def load_ml():
     try:
-        local_path = MODEL_NAME + '.pkl'
-        if not os.path.exists(local_path):
-            s3.download_file(BUCKET_NAME, MODEL_KEY_S3, local_path)
-        
-        return load_model(MODEL_NAME)
-    except Exception as e:
-        st.error(f"Błąd ładowania modelu: {e}")
+        if not os.path.exists('final_regression_pipeline.pkl'):
+            s3.download_file(BUCKET_NAME, 'Train_Model/final_regression_pipeline.pkl', 'final_regression_pipeline.pkl')
+        return load_model('final_regression_pipeline')
+    except:
         return None
 
-# Ładowanie zasobów
-wroclaw_2023_df = load_data_from_s3("Dane_mod9/halfmarathon_wroclaw_2023__final.csv")
-wroclaw_2024_df = load_data_from_s3("Dane_mod9/halfmarathon_wroclaw_2024__final.csv")
-normalization_stats = load_normalization_stats()
-model = load_ml_model()
+# Ładowanie
+wroclaw_2023_df = load_s3_data("Dane_mod9/halfmarathon_wroclaw_2023__final.csv")
+wroclaw_2024_df = load_s3_data("Dane_mod9/halfmarathon_wroclaw_2024__final.csv")
+stats = load_stats()
+model = load_ml()
 
 # --- HEADER ---
 st.markdown("""
-<div style="display: flex; justify-content: center; align-items: center; border: 2px solid #E461FF; 
-     background-color: #D7FFA1; padding: 10px; border-radius: 15px; width: 100%; box-sizing: border-box; 
-     margin-top: 2cm; height: 150px; font-family: Arial, sans-serif;">
-    <h1 style="color: #E461FF; margin: 0; text-align: center;">Witaj Przyjacielu</h1>
+<div style="text-align: center; border: 2px solid #E461FF; background: #D7FFA1; 
+     padding: 30px; border-radius: 15px; margin: 20px 0;">
+    <h1 style="color: #E461FF;">Witaj Przyjacielu</h1>
+    <p style="color: #0000FF; font-size: 18px;">
+        Przewidź swój czas półmaratonu na podstawie formy biegowej
+    </p>
 </div>
 """, unsafe_allow_html=True)
 
-st.markdown("""
-<p style="text-align: center; font-size: 20px; color: #0000FF; margin-top: 20px;">
-    Pomogę Ci przewidzieć Twój czas półmaratonu na podstawie danych osobistych i aktualnej formy biegowej
-</p>
-""", unsafe_allow_html=True)
 
-def extract_runner_data_with_llm(user_input_text: str) -> dict:
-    """
-    Wyodrębnia dane biegacza z tekstu użytkownika za pomocą OpenAI.
-    """
-    if not openai.api_key:
-        st.error("Klucz API OpenAI nie jest ustawiony.")
-        return None
 
-    prompt_messages = [
-        {"role": "system", "content": """Jesteś asystentem, który precyzyjnie wyodrębnia kluczowe informacje o biegaczu z luźnego tekstu.
-         Musisz zidentyfikować: imię, wiek (jako liczbę całkowitą), płeć ('Mężczyzna' lub 'Kobieta') oraz czas na 5 km.
-         Czas na 5 km powinien być w formacie 'H:MM:SS' lub 'M:SS'. Jeśli tekst opisuje czas na 5 km słownie (np. '22 minuty 30 sekund'),
-         przekonwertuj go na format 'M:SS'. Jeśli któraś z informacji nie zostanie znaleziona, użyj wartości 'null'.
-         Zawsze zwracaj wynik w formacie JSON z kluczami: 'name', 'wiek', 'plec', 'czas_5km_str'.
-         Przykład odpowiedzi dla 'Mam na imię Ania, mam 28 lat i jestem kobietą, a mój czas na 5km to 25 minut i 15 sekund':
-         {"name": "Ania", "wiek": 28, "plec": "Kobieta", "czas_5km_str": "25:15"}
-         """},
-        {"role": "user", "content": user_input_text}
-    ]
-
-    try:
-        response = openai.chat.completions.create(
-            model="gpt-4o-mini",
-            messages=prompt_messages,
-            response_format={"type": "json_object"},
-            temperature=0.0
-        )
-        
-        extracted_data = json.loads(response.choices[0].message.content)
-        return extracted_data
-
-    except Exception as e:
-        st.error(f"Błąd podczas komunikacji z OpenAI: {e}")
-        return None
-
+        # --------------------------------------------------------------------------------------------------------------------------------
 # --- ZAKŁADKI ---
-t1, t2, t3 = st.tabs(["Analiza twojej kondycji", "Przegląd danych", "Analiza EDA"])
-
-
-
+t1, t2, t3 = st.tabs(["🏃 Predykcja", "📊 Dane", "📈 Analiza"])
 
         # --------------------------------------------------------------------------------------------------------------------------------
-
-        # --------------------------------------------------------------------------------------------------------------------------------
-
 
 
 with t1:
-    st.title('Szacowanie czasu biegu półmaratonu 🏃')
+    st.title('Przewidywanie czasu półmaratonu')
     
-    # Formularz
-    with st.form(key='prediction_form'):
-        col1, col2 = st.columns(2)
+    with st.form("form"):
+        c1, c2 = st.columns(2)
+        name = c1.text_input('Imię:', st.session_state.get('name', ''))
+        wiek = c1.number_input('Wiek:', 10, 120, st.session_state.get('wiek', 30))
+        plec = c2.selectbox('Płeć:', ['Mężczyzna', 'Kobieta'], 
+                           ['Mężczyzna', 'Kobieta'].index(st.session_state.get('plec', 'Mężczyzna')))
+        czas_str = c2.text_input('Czas na 5 km (np. 22:30):', st.session_state.get('czas', '22:30'))
         
-        with col1:
-            name = st.text_input('1. Imię:', value=st.session_state.get('name', ''))
-            wiek = st.number_input('2. Wiek:', min_value=10, max_value=120, 
-                                   value=st.session_state.get('wiek', 30))
-        
-        with col2:
-            plec = st.selectbox('3. Płeć:', ['Mężczyzna', 'Kobieta'], 
-                               index=['Mężczyzna', 'Kobieta'].index(
-                                   st.session_state.get('plec', 'Mężczyzna')))
-            czas_5km_str = st.text_input('4. Czas na 5 km (np. 22:22):', 
-                                         value=st.session_state.get('czas_km', '22:30'))
-
-        submitted = st.form_submit_button('Przewidź czas!')
-        
-        if submitted:
-            # Zapisz stan
-            st.session_state.update({
-                'name': name, 'wiek': wiek, 
-                'plec': plec, 'czas_km': czas_5km_str
-            })
+        if st.form_submit_button('🏆 Przewidź czas!'):
+            st.session_state.update({'name': name, 'wiek': wiek, 'plec': plec, 'czas': czas_str})
             
-            # Walidacja
-            czas_5km_sec = convert_time_to_seconds(czas_5km_str)
+            czas_sec = convert_time_to_seconds(czas_str)
             
-            if czas_5km_sec is None:
-                st.error("❌ Nieprawidłowy format czasu! Użyj formatu M:SS lub H:MM:SS")
-            elif model is None:
-                st.error("❌ Model ML nie został załadowany")
-            elif normalization_stats is None:
-                st.error("❌ Brak statystyk normalizacji")
+            if not czas_sec:
+                st.error("❌ Nieprawidłowy format czasu!")
+            elif not model or not stats:
+                st.error("❌ Model lub statystyki nie załadowane")
             else:
                 try:
-                    # Tworzenie cech i predykcja ML
-                    features_df = create_features(czas_5km_sec, wiek, plec, normalization_stats)
-                    prediction = predict_model(model, data=features_df)
-                    pred_seconds = int(round(prediction['prediction_label'][0]))
-                    pred_time = seconds_to_hms(pred_seconds)
+                    features = create_features(czas_sec, wiek, plec, stats)
+                    pred = predict_model(model, data=features)
+                    pred_sec = int(round(pred['prediction_label'][0]))
+                    pred_time = seconds_to_hms(pred_sec)
                     
-                    # Wyniki
-                    st.markdown("## 📋 Podsumowanie danych:")
-                    col_a, col_b = st.columns(2)
-                    with col_a:
-                        st.write(f"**Imię:** {name}")
-                        st.write(f"**Wiek:** {wiek} lat")
-                    with col_b:
-                        st.write(f"**Płeć:** {plec}")
-                        st.write(f"**Czas 5km:** {czas_5km_str}")
+                    st.markdown("### 📋 Twoje dane:")
+                    c1, c2 = st.columns(2)
+                    c1.write(f"**Imię:** {name}")
+                    c1.write(f"**Wiek:** {wiek} lat")
+                    c2.write(f"**Płeć:** {plec}")
+                    c2.write(f"**Czas 5km:** {czas_str}")
                     
                     st.markdown("---")
-                    st.markdown("### 🏆 Przewidywany Czas Półmaratonu:")
                     st.balloons()
-                    st.success(f"## {pred_time}")
+                    st.success(f"# 🏆 {pred_time}")
+                    st.info(f"Przewidywany czas półmaratonu (21.1 km): **{pred_time}**")
                     
-                    st.info(f"📊 Twój przewidywany czas ukończenia półmaratonu (21.1 km) to: **{pred_time}**")
-                    
-                    # Szczegóły (opcjonalne)
-                    with st.expander("📊 Szczegóły predykcji - pokaż techniczne informacje"):
-                        st.write(f"**Przewidywany czas:** {pred_seconds} sekund ({pred_seconds/60:.1f} minut)")
-                        st.write(f"**Model:** {type(model).__name__}")
-                        st.write(f"**Liczba cech użytych:** {len(features_df.columns)}")
-                        
-                        st.markdown("**Kluczowe cechy interakcyjne:**")
-                        col_x, col_y = st.columns(2)
-                        with col_x:
-                            st.write(f"• Czas 5km (znormalizowany): `{features_df['czas_5km_normalized'].values[0]:.3f}`")
-                            st.write(f"• Wiek (znormalizowany): `{features_df['wiek_normalized'].values[0]:.3f}`")
-                            st.write(f"• Płeć (0=K, 1=M): `{features_df['is_male'].values[0]}`")
-                        with col_y:
-                            st.write(f"• Interakcja czas×wiek: `{features_df['czas5km_x_wiek'].values[0]:.3f}`")
-                            st.write(f"• Interakcja czas×płeć: `{features_df['czas5km_x_male'].values[0]:.3f}`")
-                            st.write(f"• Potrójna interakcja: `{features_df['czas5km_x_wiek_x_male'].values[0]:.3f}`")
-                        
-                        st.markdown("**Statystyki normalizacji:**")
-                        st.json(normalization_stats)
+                    with st.expander("🔍 Szczegóły techniczne"):
+                        st.write(f"Czas w sekundach: {pred_sec} ({pred_sec/60:.1f} min)")
+                        st.write(f"Model: {type(model).__name__}")
+                        st.write(f"Cechy: {len(features.columns)}")
+                        st.write(f"Czas (norm): {features['czas_5km_normalized'].values[0]:.3f}")
+                        st.write(f"Wiek (norm): {features['wiek_normalized'].values[0]:.3f}")
+                        st.write(f"Interakcja czas×wiek×płeć: {features['czas5km_x_wiek_x_male'].values[0]:.3f}")
                 
                 except Exception as e:
-                    st.error(f"❌ Błąd podczas predykcji: {e}")
-                    with st.expander("🔍 Szczegóły błędu (dla debugowania)"):
-                        st.exception(e)
+                    st.error(f"❌ Błąd: {e}")
 
 
         # --------------------------------------------------------------------------------------------------------------------------------
