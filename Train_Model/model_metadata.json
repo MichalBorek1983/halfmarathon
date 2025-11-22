@@ -1,7 +1,7 @@
 {
-    "experiment": "EXP5: Wszystkie",
-    "mae_min": 0.57,
-    "r2": 0.9983,
-    "train_date": "2025-11-22 14:14:35",
+    "experiment": "EXP1: Prosty (5+10+15km)",
+    "mae_min": 1.36,
+    "r2": 0.9876,
+    "train_date": "2025-11-22 22:05:14",
     "samples": 17626
 }
