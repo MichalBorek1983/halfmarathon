@@ -31,8 +31,11 @@ BUCKET_NAME = "zadmod-9"
 s3 = boto3.client("s3")
 st.set_page_config(layout="wide", page_title="Predykcja Półmaratonu")
 
-# --- FUNKCJE ---
+# ============================================
+# FUNKCJE POMOCNICZE
+# ============================================
 def time_to_sec(time_str):
+    """Konwertuje czas MM:SS lub H:MM:SS na sekundy."""
     match = re.match(r'(?:(\d+):)?(\d+):(\d+)', str(time_str).strip())
     if match:
         h, m, s = [int(x) if x else 0 for x in match.groups()]
@@ -40,9 +43,13 @@ def time_to_sec(time_str):
     return None
 
 def sec_to_time(sec):
+    """Konwertuje sekundy na format H:MM:SS."""
     h, m, s = sec // 3600, (sec % 3600) // 60, sec % 60
     return f"{h:02}:{m:02}:{s:02}"
 
+# ============================================
+# WCZYTYWANIE DANYCH
+# ============================================
 @st.cache_data
 def load_s3_data(key):
     try:
@@ -55,25 +62,95 @@ def load_s3_data(key):
 def load_ml():
     try:
         if not os.path.exists('final_regression_pipeline.pkl'):
-            s3.download_file(BUCKET_NAME, 'Train_Model/final_regression_pipeline.pkl', 'final_regression_pipeline.pkl')
+            s3.download_file(BUCKET_NAME, 'Train_Model/final_regression_pipeline.pkl', 
+                           'final_regression_pipeline.pkl')
         return load_model('final_regression_pipeline')
-    except:
+    except Exception as e:
+        st.error(f"Błąd wczytywania modelu: {e}")
         return None
 
 @st.cache_data
-def load_meta():
+def load_stats():
+    """Wczytaj statystyki normalizacji i metadane."""
+    stats = {}
+    try:
+        if not os.path.exists('normalization_stats.json'):
+            s3.download_file(BUCKET_NAME, 'Train_Model/normalization_stats.json', 
+                           'normalization_stats.json')
+        stats['norm'] = json.load(open('normalization_stats.json'))
+    except:
+        stats['norm'] = None
+    
     try:
         if not os.path.exists('model_metadata.json'):
-            s3.download_file(BUCKET_NAME, 'Train_Model/model_metadata.json', 'model_metadata.json')
-        return json.load(open('model_metadata.json'))
+            s3.download_file(BUCKET_NAME, 'Train_Model/model_metadata.json', 
+                           'model_metadata.json')
+        stats['meta'] = json.load(open('model_metadata.json'))
     except:
-        return {}
+        stats['meta'] = {}
+    
+    return stats
 
 # Wczytaj wszystko
 wroclaw_2023_df = load_s3_data("Dane_mod9/halfmarathon_wroclaw_2023__final.csv")
 wroclaw_2024_df = load_s3_data("Dane_mod9/halfmarathon_wroclaw_2024__final.csv")
 model = load_ml()
-meta = load_meta()
+stats = load_stats()
+norm_stats = stats.get('norm')
+meta = stats.get('meta', {})
+
+def predict_time(czas_5km_sec, wiek, plec, model, norm_stats):
+    """Przewiduje czas półmaratonu na podstawie cech."""
+    
+    if not model:
+        return None
+        
+    plec_kod = 'M' if plec == 'Mężczyzna' else 'K'
+    
+    # 1. Przygotuj dane wejściowe dla PyCaret (podstawowe)
+    data = pd.DataFrame([{
+        '5 km Czas': czas_5km_sec,
+        'Wiek': wiek,
+        'Płeć': plec_kod
+    }])
+    
+    # 2. Jeśli dostępne są statystyki, dodaj cechy interakcyjne
+    if norm_stats:
+        # Normalizacja
+        data['czas_5km_norm'] = (czas_5km_sec - norm_stats['mean_5km']) / norm_stats['std_5km']
+        data['wiek_norm'] = (wiek - norm_stats['mean_wiek']) / norm_stats['std_wiek']
+        data['is_male'] = 1 if plec_kod == 'M' else 0
+
+        # Dodanie cech interakcyjnych
+        data['czas_x_wiek'] = data['czas_5km_norm'] * data['wiek_norm']
+        data['czas_x_plec'] = data['czas_5km_norm'] * data['is_male']
+        data['wiek_x_plec'] = data['wiek_norm'] * data['is_male']
+
+    # 3. Predykcja
+    pred = predict_model(model, data=data)
+    
+    return int(pred['prediction_label'][0]) if not pred.empty else None
+
+# ============================================
+## 💻 INTERFEJS STREAMLIT
+# ============================================
+
+def render_header(meta_data):
+    """Renderuje nagłówek i metryki modelu."""
+    st.markdown("""<div style="text-align: center; border: 2px solid #E461FF; background: #D7FFA1;     padding: 30px; border-radius: 15px;">
+        <h1 style="color: #E461FF;">🏃 Predykcja Półmaratonu</h1>
+        <p style="color: #0000FF; font-size: 18px;">Przewidź swój czas półmaratonu na podstawie formy biegowej</p>
+    </div>""", unsafe_allow_html=True)
+    
+    # Informacje o modelu
+    if meta_data:
+        st.markdown("### 📊 Metryki Modelu")
+        c1, c2, c3 = st.columns(3)
+        c1.metric("Model", meta_data.get('experiment', 'N/A').split(':')[0])
+        c2.metric("MAE", f"{meta_data.get('mae_min', 'N/A')} min")
+        c3.metric("R²", f"{meta_data.get('r2', 'N/A'):.4f}")
+
+render_header(meta)
 
 
 
@@ -85,127 +162,99 @@ t1, t2, t3 = st.tabs(["🏃 Predykcja", "📊 Dane", "📈 Analiza"])
 
 
 with t1:
-    st.markdown("""
-    <div style="text-align: center; border: 2px solid #E461FF; background: #D7FFA1; 
-        padding: 30px; border-radius: 15px;">
-        <h1 style="color: #E461FF;">🏃 Predykcja Półmaratonu</h1>
-        <p style="color: #0000FF; font-size: 18px;">
-            Przewidź swój czas półmaratonu na podstawie formy biegowej
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
-
-    # --- INFORMACJE O MODELU ---
     st.title('🏆 Przewiduj swój czas')
 
-    if meta:
-        c1, c2, c3 = st.columns(3)
-        c1.metric("📊 Eksperyment", meta.get('experiment', 'N/A')[:30])
-        c2.metric("📏 MAE", f"{meta.get('mae_min', 'N/A')} min")
-        c3.metric("🎯 R²", meta.get('r2', 'N/A'))
-
-    # --- FORMULARZ PREDYKCJI ---
-    with st.form("form"):
+    with st.form("prediction_form"):
         st.markdown("### 📝 Wprowadź swoje dane:")
-        
+
         c1, c2 = st.columns(2)
-        wiek = c1.number_input('Wiek:', 10, 120, 30)
-        plec = c1.selectbox('Płeć:', ['Mężczyzna', 'Kobieta'])
-        czas = c2.text_input('Czas 5km (np. 22:30):', '22:30')
+        wiek = c1.number_input('Wiek:', 10, 120, 30, key='wiek_input')
+        plec = c1.selectbox('Płeć:', ['Mężczyzna', 'Kobieta'], key='plec_input')
+        czas = c2.text_input('Czas 5km (np. 22:30):', '22:30', key='czas_input')
+
+        submitted = st.form_submit_button('🏆 Przewiduj!', use_container_width=True)
         
-        if st.form_submit_button('🏆 Przewidź!', use_container_width=True):
+        if submitted:
             czas_sec = time_to_sec(czas)
             
+            # Walidacja
             if not czas_sec:
-                st.error("❌ Zły format! Użyj MM:SS (np. 22:30)")
+                st.error("❌ Zły format! Użyj MM:SS lub H:MM:SS (np. 22:30)")
             elif czas_sec < 600 or czas_sec > 3600:
-                st.warning("⚠️ Czas 5km wydaje się nietypowy (powinien być 10-60 minut)")
+                st.warning("⚠️ Czas 5km wydaje się nietypowy (10-60 minut)")
             elif not model:
-                st.error("❌ Model nie załadowany")
+                st.error("❌ Model nie załadowany. Sprawdź logi.")
             else:
                 try:
-                    # Przygotuj dane dla modelu
-                    # WAŻNE: Dodaj wszystkie kolumny, nawet te ignorowane przez model
-                    data = pd.DataFrame([{
-                        '5 km Czas': czas_sec,
-                        '10 km Czas': czas_sec * 2.1,   # Przybliżenie (model to ignoruje)
-                        '15 km Czas': czas_sec * 3.15,  # Przybliżenie (model to ignoruje)
-                        '20 km Czas': czas_sec * 4.2,   # Przybliżenie (model to ignoruje)
-                        'Wiek': wiek,
-                        'Płeć': 'M' if plec == 'Mężczyzna' else 'K'
-                    }])
+                    # PREDYKCJA
+                    pred_sec = predict_time(czas_sec, wiek, plec, model, norm_stats)
                     
-                    # Predykcja
-                    pred = predict_model(model, data=data)
-                    pred_sec = int(pred['prediction_label'][0])
-                    pred_time = sec_to_time(pred_sec)
-                    
-                    # Wynik
-                    st.balloons()
-                    st.markdown("---")
-                    st.success(f"# 🏆 Przewidywany czas półmaratonu")
-                    st.markdown(f"<h1 style='text-align: center; color: #E461FF; font-size: 72px;'>{pred_time}</h1>", 
-                            unsafe_allow_html=True)
-                    
-                    # Metryki
-                    st.markdown("### 📊 Szczegóły:")
-                    c1, c2, c3, c4 = st.columns(4)
-                    c1.metric("⏱️ Czas", pred_time)
-                    c2.metric("⏱️ Sekundy", f"{pred_sec}s")
-                    c3.metric("⏱️ Minuty", f"{pred_sec/60:.1f} min")
-                    c4.metric("🏃 Tempo", f"{pred_sec/21.1/60:.2f} min/km")
-                    
-                    # Porównanie z danymi historycznymi
-                    if not wroclaw_2023_df.empty or not wroclaw_2024_df.empty:
-                        st.markdown("---")
-                        st.markdown("### 📈 Porównanie z innymi biegaczami")
+                    if pred_sec is not None:
+                        pred_time = sec_to_time(pred_sec)
                         
+                        # WYNIK
+                        st.balloons()
+                        st.markdown("---")
+                        st.success("# 🏆 Przewidywany czas półmaratonu")
+                        st.markdown(
+                            f"<h1 style='text-align: center; color: #E461FF; font-size: 72px;'>{pred_time}</h1>", 
+                            unsafe_allow_html=True
+                        )
+                        
+                        # Metryki
+                        st.markdown("### 📊 Szczegóły:")
+                        c1, c2, c3, c4 = st.columns(4)
+                        c1.metric("⏱️ Czas", pred_time)
+                        c2.metric("⏱️ Sekundy", f"{pred_sec}s")
+                        c3.metric("⏱️ Minuty", f"{pred_sec/60:.1f} min")
+                        # Dokładny dystans półmaratonu to 21.0975 km
+                        c4.metric("🏃 Tempo/km", f"{pred_sec/21.0975/60:.2f} min/km") 
+                        
+                        # Porównanie z danymi historycznymi
                         combined = pd.concat([wroclaw_2023_df, wroclaw_2024_df])
-                        if 'Czas' in combined.columns:
-                            # Konwertuj czasy
-                            combined['Czas_sec'] = combined['Czas'].apply(time_to_sec)
-                            combined = combined.dropna(subset=['Czas_sec'])
+                        if not combined.empty and 'Czas' in combined.columns:
+                            st.markdown("---")
+                            st.markdown("### 📈 Porównanie z innymi biegaczami")
                             
-                            if len(combined) > 0:
-                                percentile = (combined['Czas_sec'] > pred_sec).mean() * 100
-                                avg_time = combined['Czas_sec'].mean()
+                            combined['Czas_sec'] = combined['Czas'].apply(time_to_sec)
+                            valid_times = combined['Czas_sec'].dropna()
+                            
+                            if len(valid_times) > 0:
+                                # Percentyl (np. 70% oznacza, że jesteś szybszy niż 70% biegaczy)
+                                percentile = (valid_times > pred_sec).sum() / len(valid_times) * 100 
+                                avg_time = valid_times.mean()
+                                diff = avg_time - pred_sec
                                 
                                 c1, c2, c3 = st.columns(3)
                                 c1.metric("📊 Twój percentyl", f"{percentile:.1f}%")
                                 c2.metric("📊 Średni czas", sec_to_time(int(avg_time)))
+                                c3.metric(
+                                    "📊 Różnica",
+                                    f"{abs(diff)/60:.1f} min",
+                                    # Lepszy wynik to krótszy czas, więc dodatnia różnica to "Szybszy!"
+                                    delta="Szybszy!" if diff > 0 else "Wolniejszy"
+                                )
                                 
-                                diff = avg_time - pred_sec
-                                if diff > 0:
-                                    c3.metric("📊 Różnica", f"+{diff/60:.1f} min", delta="Szybszy od średniej")
-                                else:
-                                    c3.metric("📊 Różnica", f"{diff/60:.1f} min", delta="Wolniejszy od średniej")
-                    
-                    # Szczegóły techniczne
-                    with st.expander("🔍 Szczegóły techniczne"):
-                        st.write("**Dane wejściowe:**")
-                        st.dataframe(data[['5 km Czas', 'Wiek', 'Płeć']], use_container_width=True)
-                        
-                        st.write("**Informacje o modelu:**")
-                        if meta:
-                            st.write(f"- Eksperyment: {meta.get('experiment', 'N/A')}")
-                            st.write(f"- MAE: {meta.get('mae_min', 'N/A')} minut")
-                            st.write(f"- R²: {meta.get('r2', 'N/A')}")
-                            st.write(f"- Data treningu: {meta.get('train_date', 'N/A')}")
-                            st.write(f"- Liczba próbek: {meta.get('samples', 'N/A')}")
-                    
-                except Exception as e:
-                    st.error(f"❌ Błąd podczas predykcji: {str(e)}")
-                    with st.expander("Szczegóły błędu"):
-                        st.code(str(e))
+                        # Szczegóły techniczne
+                        with st.expander("🔍 Szczegóły techniczne"):
+                            st.write("**Dane wejściowe:**")
+                            st.dataframe(pd.DataFrame({
+                                'Wiek': [wiek], 'Płeć': [plec], 
+                                'Czas 5km': [f'{czas_sec}s ({czas})']
+                            }), use_container_width=True)
 
-    # --- FOOTER ---
-    st.markdown("---")
-    st.markdown("""
-    <div style="text-align: center; color: #888; padding: 20px;">
-        <p>🏃 Predykcja Półmaratonu | Powered by PyCaret & Streamlit</p>
-        <p style="font-size: 12px;">Model trenowany na danych z Półmaratonu Wrocławskiego 2023-2024</p>
-    </div>
-    """, unsafe_allow_html=True)
+                            st.write(f"\n**Typ modelu:** {'Zaawansowany (z cechami interakcyjnymi)' if norm_stats else 'Prosty (bez normalizacji)'}")
+                            
+                            if meta:
+                                st.write("\n**Metryki modelu:**")
+                                st.write(f"- MAE: {meta.get('mae_min', 'N/A')} min")
+                                st.write(f"- R²: {meta.get('r2', 'N/A')}")
+                            
+                    else:
+                        st.error("❌ Błąd predykcji. Model zwrócił pusty wynik.")
+                            
+                except Exception as e:
+                    st.error(f"❌ Wystąpił nieoczekiwany błąd podczas predykcji: {str(e)}")
 
 
 
