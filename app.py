@@ -47,6 +47,10 @@ def sec_to_time(sec):
     h, m, s = sec // 3600, (sec % 3600) // 60, sec % 60
     return f"{h:02}:{m:02}:{s:02}"
 
+def convert_time_to_seconds(time_str):
+    """Backward-compatible wrapper used across the codebase; delegates to time_to_sec."""
+    return time_to_sec(time_str)
+
 # ============================================
 # WCZYTYWANIE DANYCH
 # ============================================
@@ -99,59 +103,73 @@ stats = load_stats()
 norm_stats = stats.get('norm')
 meta = stats.get('meta', {})
 
-def predict_time(czas_5km_sec, wiek, plec, model, norm_stats):
-    """Przewiduje czas półmaratonu na podstawie cech."""
+# FUNKCJA PREDYKCJI
+def predict_time(czas_5km_sec, wiek, plec):
+    """
+    Przewiduje czas półmaratonu - MODEL 2.
+    Model oczekuje: 5km, 10km, 15km, wiek, płeć + cechy interakcyjne.
+    """
     
     if not model:
         return None
-        
+    
     plec_kod = 'M' if plec == 'Mężczyzna' else 'K'
     
-    # 1. Przygotuj dane wejściowe dla PyCaret (podstawowe)
+    # Estymacja czasów 10km i 15km na podstawie 5km
+    # Zakładamy tempo degresywne (wolniej na dłuższych dystansach)
+    czas_10km = czas_5km_sec * 2.05  # ~2-3% wolniej
+    czas_15km = czas_5km_sec * 3.10  # ~3-5% wolniej
+    
+    # Podstawowe dane
     data = pd.DataFrame([{
         '5 km Czas': czas_5km_sec,
+        '10 km Czas': czas_10km,
+        '15 km Czas': czas_15km,
         'Wiek': wiek,
         'Płeć': plec_kod
     }])
     
-    # 2. Jeśli dostępne są statystyki, dodaj cechy interakcyjne
-    if norm_stats:
-        # Normalizacja
-        data['czas_5km_norm'] = (czas_5km_sec - norm_stats['mean_5km']) / norm_stats['std_5km']
-        data['wiek_norm'] = (wiek - norm_stats['mean_wiek']) / norm_stats['std_wiek']
-        data['is_male'] = 1 if plec_kod == 'M' else 0
-
-        # Dodanie cech interakcyjnych
-        data['czas_x_wiek'] = data['czas_5km_norm'] * data['wiek_norm']
-        data['czas_x_plec'] = data['czas_5km_norm'] * data['is_male']
-        data['wiek_x_plec'] = data['wiek_norm'] * data['is_male']
-
-    # 3. Predykcja
-    pred = predict_model(model, data=data)
+    # Cechy interakcyjne (MODEL 2)
+    data['time_5km_age'] = data['5 km Czas'] * data['Wiek']
+    data['time_5km_squared'] = data['5 km Czas'] ** 2
+    data['age_squared'] = data['Wiek'] ** 2
+    data['time_10km_age'] = data['10 km Czas'] * data['Wiek']
     
-    return int(pred['prediction_label'][0]) if not pred.empty else None
+    # Predykcja
+    try:
+        pred = predict_model(model, data=data)
+        return int(pred['prediction_label'][0]) if not pred.empty else None
+    except Exception as e:
+        st.error(f"Błąd predykcji: {e}")
+        with st.expander("Debug info"):
+            st.write("Kolumny w data:", data.columns.tolist())
+        return None
 
-# ============================================
-## 💻 INTERFEJS STREAMLIT
-# ============================================
-
+# FUNKCJA RENDERUJĄCA NAGŁÓWEK
 def render_header(meta_data):
     """Renderuje nagłówek i metryki modelu."""
-    st.markdown("""<div style="text-align: center; border: 2px solid #E461FF; background: #D7FFA1;     padding: 30px; border-radius: 15px;">
+    st.markdown("""
+    <div style="text-align: center; border: 2px solid #E461FF; background: #D7FFA1; 
+        padding: 30px; border-radius: 15px;">
         <h1 style="color: #E461FF;">🏃 Predykcja Półmaratonu</h1>
-        <p style="color: #0000FF; font-size: 18px;">Przewidź swój czas półmaratonu na podstawie formy biegowej</p>
-    </div>""", unsafe_allow_html=True)
+        <p style="color: #0000FF; font-size: 18px;">
+            Przewiduj swój czas półmaratonu na podstawie formy biegowej
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
     
     # Informacje o modelu
     if meta_data:
         st.markdown("### 📊 Metryki Modelu")
         c1, c2, c3 = st.columns(3)
-        c1.metric("Model", meta_data.get('experiment', 'N/A').split(':')[0])
+        exp_name = meta_data.get('experiment', 'N/A')
+        c1.metric("Model", exp_name.split(':')[0] if ':' in exp_name else exp_name[:30])
         c2.metric("MAE", f"{meta_data.get('mae_min', 'N/A')} min")
         c3.metric("R²", f"{meta_data.get('r2', 'N/A'):.4f}")
 
-render_header(meta)
+# INTERFEJS
 
+render_header(meta)
 
 
         # --------------------------------------------------------------------------------------------------------------------------------
@@ -187,7 +205,7 @@ with t1:
             else:
                 try:
                     # PREDYKCJA
-                    pred_sec = predict_time(czas_sec, wiek, plec, model, norm_stats)
+                    pred_sec = predict_time(czas_sec, wiek, plec)
                     
                     if pred_sec is not None:
                         pred_time = sec_to_time(pred_sec)
@@ -207,8 +225,7 @@ with t1:
                         c1.metric("⏱️ Czas", pred_time)
                         c2.metric("⏱️ Sekundy", f"{pred_sec}s")
                         c3.metric("⏱️ Minuty", f"{pred_sec/60:.1f} min")
-                        # Dokładny dystans półmaratonu to 21.0975 km
-                        c4.metric("🏃 Tempo/km", f"{pred_sec/21.0975/60:.2f} min/km") 
+                        c4.metric("🏃 Tempo/km", f"{pred_sec/21.0975/60:.2f} min/km")
                         
                         # Porównanie z danymi historycznymi
                         combined = pd.concat([wroclaw_2023_df, wroclaw_2024_df])
@@ -220,8 +237,7 @@ with t1:
                             valid_times = combined['Czas_sec'].dropna()
                             
                             if len(valid_times) > 0:
-                                # Percentyl (np. 70% oznacza, że jesteś szybszy niż 70% biegaczy)
-                                percentile = (valid_times > pred_sec).sum() / len(valid_times) * 100 
+                                percentile = (valid_times > pred_sec).sum() / len(valid_times) * 100
                                 avg_time = valid_times.mean()
                                 diff = avg_time - pred_sec
                                 
@@ -231,30 +247,33 @@ with t1:
                                 c3.metric(
                                     "📊 Różnica",
                                     f"{abs(diff)/60:.1f} min",
-                                    # Lepszy wynik to krótszy czas, więc dodatnia różnica to "Szybszy!"
                                     delta="Szybszy!" if diff > 0 else "Wolniejszy"
                                 )
-                                
+                        
                         # Szczegóły techniczne
                         with st.expander("🔍 Szczegóły techniczne"):
                             st.write("**Dane wejściowe:**")
-                            st.dataframe(pd.DataFrame({
-                                'Wiek': [wiek], 'Płeć': [plec], 
-                                'Czas 5km': [f'{czas_sec}s ({czas})']
-                            }), use_container_width=True)
-
-                            st.write(f"\n**Typ modelu:** {'Zaawansowany (z cechami interakcyjnymi)' if norm_stats else 'Prosty (bez normalizacji)'}")
+                            st.write(f"- Czas 5km: {czas_sec}s ({czas})")
+                            st.write(f"- Wiek: {wiek}")
+                            st.write(f"- Płeć: {plec}")
+                            
+                            st.write("\n**Model:** Kod 2 (z czasami 5km, 10km, 15km)")
+                            st.write("*Czasy 10km i 15km są estymowane na podstawie czasu 5km*")
                             
                             if meta:
                                 st.write("\n**Metryki modelu:**")
                                 st.write(f"- MAE: {meta.get('mae_min', 'N/A')} min")
                                 st.write(f"- R²: {meta.get('r2', 'N/A')}")
-                            
+                                st.write(f"- Próbek: {meta.get('samples', 'N/A')}")
                     else:
                         st.error("❌ Błąd predykcji. Model zwrócił pusty wynik.")
                             
                 except Exception as e:
-                    st.error(f"❌ Wystąpił nieoczekiwany błąd podczas predykcji: {str(e)}")
+                    st.error(f"❌ Wystąpił nieoczekiwany błąd: {str(e)}")
+                    with st.expander("Szczegóły błędu"):
+                        import traceback
+                        st.code(traceback.format_exc())
+
 
 
 
