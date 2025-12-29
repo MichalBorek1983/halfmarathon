@@ -18,6 +18,7 @@ from datetime import datetime
 from langfuse.openai import OpenAI
 from langfuse import observe
 import openai
+import base64
 
 
         # --------------------------------------------------------------------------------------------------------------------------------
@@ -29,7 +30,92 @@ import openai
 load_dotenv()
 BUCKET_NAME = "zadmod-9"
 s3 = boto3.client("s3")
-st.set_page_config(layout="wide", page_title="Predykcja Półmaratonu")
+st.set_page_config(layout="wide", page_title="Predykcja Półmaratonu", page_icon="🏃")
+
+# ============================================
+# NOWE: FUNKCJE STYLOWANIA (tapeta + kawa)
+# ============================================
+
+def get_base64_image(image_path):
+    """Konwertuje obraz na base64 do użycia w CSS."""
+    try:
+        with open(image_path, "rb") as img_file:
+            return base64.b64encode(img_file.read()).decode()
+    except:
+        return None
+
+def apply_background_and_coffee():
+    """Aplikuje tło z obrazu i przycisk 'Kup mi kawę'."""
+    
+    # Próba załadowania lokalnego obrazu tła
+    bg_image = get_base64_image("background.jpg")
+    
+    if bg_image:
+        bg_css = f"""
+        .stApp {{
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.6), 
+                rgba(0, 0, 0, 0.6)
+            ), url("data:image/jpeg;base64,{bg_image}");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }}
+        """
+    else:
+        bg_css = ""
+    
+    # Link do kawy - ZMIEŃ NA SWÓJ!
+    coffee_link = "https://buycoffee.to/michalborek"
+    
+    st.markdown(f"""
+    <style>
+        {bg_css}
+        
+        /* Przycisk Kup mi kawę - fixed w prawym dolnym rogu */
+        .coffee-container {{
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+        }}
+        
+        .coffee-button {{
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #FF813F 0%, #FFD43B 100%);
+            color: #1a1a2e;
+            padding: 14px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(255, 129, 63, 0.4);
+            transition: all 0.3s ease;
+        }}
+        
+        .coffee-button:hover {{
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 129, 63, 0.5);
+            text-decoration: none;
+            color: #1a1a2e;
+        }}
+        
+        .coffee-icon {{
+            font-size: 1.3rem;
+        }}
+    </style>
+    
+    <!-- Przycisk Kup mi kawę -->
+    <div class="coffee-container">
+        <a href="{coffee_link}" target="_blank" class="coffee-button">
+            <span class="coffee-icon">☕</span>
+            <span>Kup mi kawę</span>
+        </a>
+    </div>
+    """, unsafe_allow_html=True)
 
 # ============================================
 # FUNKCJE POMOCNICZE
@@ -167,7 +253,11 @@ def render_header(meta_data):
         c2.metric("MAE", f"{meta_data.get('mae_min', 'N/A')} min")
         c3.metric("R²", f"{meta_data.get('r2', 'N/A'):.4f}")
 
-# INTERFEJS
+# ============================================
+# INTERFEJS - NOWE: Aplikuj tło i przycisk kawy
+# ============================================
+
+apply_background_and_coffee()
 
 render_header(meta)
 
